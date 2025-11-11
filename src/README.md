@@ -48,3 +48,13 @@ The application uses a simple data model with meaningful identifiers:
    - Grade level
 
 All data is stored in memory, which means data will be reset when the server restarts.
+
+## Running Tests
+
+To verify the activity signup logic and max_participants enforcement, run:
+
+```
+PYTHONPATH=$(pwd) .venv/bin/python3 tests/test_signup.py
+```
+
+This will check that signups succeed when space is available and fail with HTTP 400 when the activity is full.
